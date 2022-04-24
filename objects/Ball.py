@@ -1,10 +1,9 @@
 from math import pi
 import random
+from objects.Parent import Parent
 
 # пофиксить тут вывод правильного ответа с 00000 в тесте
-class Ball:
-    def __init__(self, isTest = False):
-        self.isTest = isTest
+class Ball (Parent):
     def input_data(self):
         if self.isTest:
             self.r = random.randint(1, 20)

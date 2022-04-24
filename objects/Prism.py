@@ -1,4 +1,5 @@
 from Parent import *
+import random
 
 class Prism (Parent):
     

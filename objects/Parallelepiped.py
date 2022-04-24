@@ -1,8 +1,7 @@
-
 import random
+from objects.Parent import Parent
 
 class Parallelepiped (Parent):
-        
     def input_data(self):
         if self.isTest:
             self.a = random.randint(1, 20)

@@ -24,16 +24,3 @@ menu = {
 
 #print (menu["test"])
 #print (menu["calculator"])
-
-print ("введите калькулятор/тест")
-n1 = input()
-
-if n1 == 1:
-    print ("введите пункт подменю калькулятора")
-    #k1 == input ()
-else:
-    if n1 == 2:
-        print ("введите пункт подменю теста")
-        k2 == input ()
-    else:
-        print ("введено неверное значение")

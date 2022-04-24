@@ -1,18 +1,32 @@
+#   ПРОВЕРИТЬ ТЕСТ НА ПРЯМОУГОЛЬНИК/КВАДРАТ
 
+import random
+from objects.Parent import Parent
 
-class Rectangle:
-    def __init__(self, isAlfa = False):
-        self.isAlfa = isAlfa
+class Rectangle(Parent):
+    def __init__(self, isRectangle = False):
+        self.isRectangle = isRectangle
 
     def input_data(self):
-        self.a = int(input("Введите сторону a: "))
-        if self.isAlfa:
-            self.b = int(input("Введите сторону b: "))
+        if self.isTest:
+            self.a = random.randint(1, 20)
+            print ("сторона a", self.a)
+            if self.isRectangle:
+                self.b = random.randint(1, 20)
+                print ("сторона b", self.b)
         else:
-            self.b = self.a
-        print("-" * 22)
-    
+            self.a = int(input("Введите сторону a: "))
+            if self.isRectangle:
+                self.b = int(input("Введите сторону b: "))
+            else:
+                self.b = self.a
+            print("-" * 22)
+
     def get_square(self):
+        if self.isTest:
+            q = int(input("введите что насчитали"))
+            zz = self.a * self.b
+            return zz == q
         return self.a * self.b
    
 

@@ -1,12 +1,9 @@
 import random
-
 from Parent import *
 
 class Multi_table (Parent):
-    # def __init__(self, isTest = False ):
-    #     self.isTest = isTest
-        
-
+    from objects.Parent import Parent
+    
     def input_data(self):
         if self.isTest:
             self.i = random.randint(1, 10)
