@@ -1,5 +1,5 @@
-#from objects.Cylinder import * ДОПИСАТЬ КОД
 
+from objects.Cylinder import *
 from objects.Ball import *
 from objects.Cone import *
 from objects.Multi_table import *
