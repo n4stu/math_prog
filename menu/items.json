@@ -1,0 +1,12 @@
+{
+    "Ball": "Шар",
+    "Cone": "Конус",
+    "Cylinder": "Цилиндр",
+    "Parallelepiped": "Параллелипипед",
+    "Parallelogram": "Паралеллограм",
+    "Prism": "Призма",
+    "Rectangle": "Прямоугольник",
+    "Trapezoid": "Трапезоид",
+    "Triangle": "Треугольник",
+    "Multiplicator": "Таблица умножения"
+}

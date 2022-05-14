@@ -1,51 +1,31 @@
-from Parent import *
 import random
 
-class Prism (Parent):
-    
-    def __init__(self, isTest = False, isH = False):
-        super().__init__(isTest)
-        self.isH = isH
+from objects.Parent import *
 
-    def input_data(self):
+class Prism (Parent):
+    def run(self):
+        self.isH = bool(int(input("\tКак считаем (по высоте - 1, по сторонам - 2): ")) - 1)
         if self.isTest:
+            self.h = random.randint(1, 20)
             if self.isH:
                 self.a = random.randint(1, 20)
                 self.b = random.randint(1, 20)
-                self.h = random.randint(1, 20)
-                print ("сторона a", self.a)
-                print ("сторона b", self.b)
-                print ("сторона h", self.h)
+                print("\tСторона a: ", self.a)
+                print("\tСторона b: ", self.b)
             else:
                 self.S = random.randint(1, 200)
+                print("\tПлощадь основания: ", self.S)
+            print("\tВысота h: ", self.h)
         
         else:
             if self.isH:
-                self.a = int(input("Введите сторону a: "))
-                self.b = int(input("Введите сторону b: "))
-                self.h = int(input("Введите высоту h: "))
+                self.a = int(input("\tВведите сторону a: "))
+                self.b = int(input("\tВведите сторону b: "))
             else:
-                self.S = int(input("Введите площадь: "))
-        print ("-" * 22)
-        
-    
-    def get_square(self):
-        if self.isTest:
-            q = int(input("введи что насчитали"))
-            if self.isH:
-                zz = 0.5 * self.a * self.b * self.h
-                return zz == q
-            else:
-                zz = self.S* self.h 
-                return zz == q
+                self.S = int(input("\tВведите площадь: "))
+            self.h = int(input("\tВведите высоту h: "))
+        if self.isH:
+            self.result = 0.5 * self.a * self.b * self.h
         else:
-            if self.isH:
-                return 0.5 * self.a * self.b * self.h 
-            else:
-                return self.S* self.h 
-
-
-# prism = Prism(bool(int(input("0 калькулятор / 1 тест "))), bool(int(input("0 площадь / 1 стороны ")))) 
-# prism.input_data()
-# print(prism.get_square())
-# print("-" * 22) 
+            self.result = self.S * self.h
+        self.calculate()

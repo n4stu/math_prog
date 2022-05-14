@@ -1,52 +1,33 @@
-from math import radians
 import math
-from random import random
+import random
+from math import radians
+
 from objects.Parent import Parent
 
 class Parallelogram(Parent):
-    def __init__(self, isAlfa = False):
-       self.isAlfa = isAlfa
 
-    def input_data(self):
+    def run(self):
+        self.isAlpha = bool(int(input("\tКак считаем (по высоте - 1, по углу - 2): ")) - 1)
         if self.isTest:
-            self.a = random.randint (1, 20)
-            print ("сторона a", self.a)
-            if self.Alfa:
-                self.b = random.randint (1, 20)
-                self.alfa = random.randint (1, 20)
-                print ("сторона b", self.b)
-                print ("угол альфа", self.alfa)
+            self.a = random.randint(1, 20)
+            print("\tСторона a: ", self.a)
+            if self.isAlpha:
+                self.b = random.randint(1, 20)
+                self.alfa = random.randint(1, 20)
+                print("\tСторона b: ", self.b)
+                print("\tУгол альфа: ", self.alfa)
             else:
-                self.h = random.randint (1, 20)
-                print ("высота h", self.h)
+                self.h = random.randint(1, 20)
+                print("\tВысота h: ", self.h)
         else:
-            self.a = int(input("введите сторону а: "))
-            if self.isAlfa:
-                self.b  = int(input("введите сторону b: "))
-                self.alfa  = int(input("введите угол alfa: "))
+            self.a = int(input("\tВведите сторону а: "))
+            if self.isAlpha:
+                self.b = int(input("\tВведите сторону b: "))
+                self.alfa = int(input("\tВведите угол alfa: "))
             else:
-                self.h  = int(input("введите высоту h: "))
-            print("-" * 22)
-
-    def get_square(self):
-        if self.isTest:
-            q = float("%.2f" % (float(input("введите что насчитали ЧЕРЕЗ ТОЧКУ "))))
-            zz = 0
-            if self.isAlfa:
-                zz = float("%.2f" % (self.a * self.b * math.sin(radians(self.alfa))))
-            else:
-                zz = self.a * self.h
-            if zz != q:
-                return "ответ неверный. объем шара = %f" % zz
-            else:
-                return "ответ верный. объем шара = %f" % zz
+                self.h  = int(input("\tВведите высоту h: "))
+        if self.isAlpha:
+            self.result = self.a * self.b * math.sin(radians(self.alfa))
         else:
-            if self.isAlfa:
-                return self.a * self.b * math.sin(radians(self.alfa))
-            else:
-                return self.a * self.h
-
-# prgm = Parallelogram(bool(int(input("как считаем пар-м ? 0 - по высоте, 1 по углу: ")))) 
-# prgm.input_data()
-# print(prgm.get_square())
-# print("-" * 22)
+            self.result = self.a * self.h
+        self.calculate()
